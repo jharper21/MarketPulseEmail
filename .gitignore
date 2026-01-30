@@ -1,0 +1,15 @@
+# Python artifacts
+__pycache__/
+*.py[cod]
+*.venv
+.env
+venv
+
+# Secrets - CRITICAL
+service_account.json
+credentials.json
+client_secret.json
+
+# Local IDE settings
+.vscode/
+.idea/

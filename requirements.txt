@@ -1,0 +1,8 @@
+python-dotenv
+yfinance
+pandas
+gspread
+oauth2client
+google-genai
+matplotlib
+pytz

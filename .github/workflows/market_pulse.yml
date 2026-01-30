@@ -1,0 +1,27 @@
+name: Market Pulse Agent
+
+on:
+  schedule:
+    - cron: '0 13,14 * * 1-5'
+    - cron: '0 16,17 * * 1-5'
+    - cron: '0 19,20 * * 1-5'
+    - cron: '15 20,21 * * 1-5'
+  workflow_dispatch:
+
+jobs:
+  run_agent:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.12' # UPDATED FROM 3.10
+      - name: Install Dependencies
+        run: pip install -r requirements.txt
+      - name: Run Script
+        env:
+          GCP_SERVICE_ACCOUNT: ${{ secrets.GCP_SERVICE_ACCOUNT }}
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_PASS: ${{ secrets.GMAIL_PASS }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python -u super_script.py
