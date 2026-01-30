@@ -24,10 +24,6 @@ Auto-scaling chart that adjusts to your actual data range:
 
 ![Trend Chart](images/sample_chart.png)
 
-## Database Headers
-* Portfolio = Ticker - Shares - Cost_Basis
-* Watchlist = Ticker
-* History_Log = Date - Total_Value - Total_Gain_Loss
 ---
 
 ## 🚀 Features
